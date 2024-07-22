@@ -1,10 +1,52 @@
-<script>
-function openApp() {
-    window.location.href = "https://tangooptonics.github.io/?content=someValue";
-    setTimeout(function() {
-        window.location.href = "https://play.google.com/store/apps/details?id=your.package.name";
-    }, 500);
-}
-</script>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 앱 딥링크 테스트</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>내 앱 딥링크 테스트</h1>
+        <p>아래 버튼을 클릭하여 앱을 열어보세요.</p>
+        <a href="https://tangooptonics.github.io/?content=testValue" class="btn" id="openApp">앱으로 열기</a>
+    </div>
 
-<a href="#" onclick="openApp();">앱으로 열기</a>
+    <script>
+    document.getElementById('openApp').addEventListener('click', function(e) {
+        e.preventDefault();
+        var appUrl = "https://tangooptonics.github.io/?content=testValue";
+        var playStoreUrl = "https://play.google.com/store/apps/details?id=your.package.name";
+        
+        window.location.href = appUrl;
+        
+        setTimeout(function() {
+            window.location.href = playStoreUrl;
+        }, 500);
+    });
+    </script>
+</body>
+</html>
